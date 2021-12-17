@@ -37,6 +37,13 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/
 # Add p7zip
 svn co https://github.com/hubutui/p7zip-lede/trunk package/p7zip
 
+# Add luci-app-passwall
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk package/openwrt-passwall
+
+# Add luci-app-openclash
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/openwrt-openclash
+pushd package/openwrt-openclash/tools/po2lmo && make && sudo make install 2>/dev/null && popd
+
 # coolsnowwolf default software package replaced with Lienol related software package
 # rm -rf feeds/packages/utils/{containerd,libnetwork,runc,tini}
 # svn co https://github.com/Lienol/openwrt-packages/trunk/utils/{containerd,libnetwork,runc,tini} feeds/packages/utils
